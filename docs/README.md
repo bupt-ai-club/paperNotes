@@ -31,7 +31,10 @@ docsify serve ./docs
 |   Improving Language Understanding by Generative Pre-Training   |   GPT1   | [paper](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)   | arXiv |  2018  |  [note](./contents/NLP/Improving%20Language%20Understanding%20by%20Generative%20Pre-Training.md)  |  |   
 |   Language Models are Unsupervised Multitask Learners   |   GPT2   |   [paper](https://insightcivic.s3.us-east-1.amazonaws.com/language-models.pdf)   |  arXiv |  2019 |   [note](./contents/NLP/Language%20Models%20are%20Unsupervised%20Multitask%20Learners.md)   |      |  
 |    Language Models are Few-Shot Learners   |   GPT3   |   [paper](https://arxiv.org/abs/2005.14165)   |  arXiv |  2020 |   [note](./contents/NLP/Language%20Models%20are%20Few-Shot%20Learners.md)   |      |  
-|     BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding   |   BERT   |   [paper](https://arxiv.org/abs/1810.04805)   |  NAACL |  2018 |   [note](./contents/NLP/BERT%20Pre-training%20of%20Deep%20Bidirectional%20Transformers%20for%20Language%20Understanding.md)   |   [code](https://github.com/codertimo/BERT-pytorch)  |  
+|     BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding   |   BERT   |   [paper](https://arxiv.org/abs/1810.04805)   |  NAACL |  2018 |   [note](./contents/NLP/BERT.md)   |   [code](https://github.com/codertimo/BERT-pytorch)  |  
+|     XLNet: Generalized Autoregressive Pretraining for Language Understanding  |   XLNet   |   [paper](https://arxiv.org/abs/1906.08237)   |  NeurIPS |  2019 |   [note](./contents/NLP/XLNet.md)   |   [code](https://github.com/zihangdai/xlnet)  |
+
+
 
 ## CV
 
@@ -46,3 +49,10 @@ docsify serve ./docs
 | 名字 | 简介 | 地址 | 会议/期刊 | 年份 | 笔记 | 代码 | 
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 |      |      |     |     |      |      |      | 
+
+
+## Model Compression
+
+| 名字 | 简介 | 地址 | 会议/期刊 | 年份 | 笔记 | 代码 | 
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+|   DepGraph: Towards Any Structural Pruning   |      |  [paper](https://arxiv.org/abs/2301.12900)   |  CVPR   |  2023    |  [note](./contents/ModelCompression/DepGraph.md)    |  [code](https://github.com/VainF/Torch-Pruning)    | 

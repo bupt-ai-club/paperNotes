@@ -11,5 +11,7 @@
   
   * 模型压缩
     * [DepGraph: Towards Any Structural Pruning](contents/ModelCompression/DepGraph.md)
+    * [LLM-Pruner: On the Structural Pruning of Large Language Models](contents/ModelCompression/LLM-Pruner.md)
+    * [Structural Pruning for Diffusion Models](contents/ModelCompression/Structural%20Pruning%20for%20Diffusion%20Models.md)
      
   * 大模型

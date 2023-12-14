@@ -14,4 +14,10 @@
     * [LLM-Pruner: On the Structural Pruning of Large Language Models](contents/ModelCompression/LLM-Pruner.md)
     * [Structural Pruning for Diffusion Models](contents/ModelCompression/Structural%20Pruning%20for%20Diffusion%20Models.md)
     * [LoRAShear: Efficient Large Language Model Structured Pruning and Knowledge Recovery](contents/ModelCompression/LoRAShear.md)
+
   * 大模型
+  
+  * 近期规划
+    * [Papers](TodoList.md) 
+
+

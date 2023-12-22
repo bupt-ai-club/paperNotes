@@ -1,6 +1,6 @@
 # Papers
 
-## 20231211-20231217
+## 20231218-20231224
 
 - [ ] 2023-ICLR-[Trainability Preserving Neural Pruning](https://arxiv.org/abs/2207.12534) [[Code](https://github.com/MingSun-Tse/TPP)]
 
@@ -16,6 +16,9 @@
 - [ ] 2023-ICML-[Efficient Latency-Aware CNN Depth Compression via Two-Stage Dynamic Programming](https://arxiv.org/abs/2301.12187) [[Code](https://github.com/snu-mllab/Efficient-CNN-Depth-Compression)]
 
 
+### RAG
+
+- [ ] 2023-Arxiv-[Retrieval-Augmented Generation for Large Language Models: A Survey](https://arxiv.org/abs/2312.10997) 
 
 
 ### LLM

@@ -125,4 +125,96 @@ $$
 \delta E=\frac{w_q^2}{2\left(H^{-1}\right)_{q q}} \tag{18}
 $$
 
-我们首先要找一个  使得(7)式最小，找到该权重以后，再依据式子(6)调整其他权重。如此，便能使得损失(7)最小。
+上面两个公式17和18的意义在于：只需要找到一个权重$q$,使得误差最小，就可以自动调整其他权重。优势在于除了删除权重之外，它还计算和改变其他权重，而不需要梯度下降或其他增量训练。
+
+假设一个非线性的神经网络满足以下公式：
+
+$$
+\mathbf{o}=\mathbf{F}(\mathbf{w}, in ) \tag{19}
+$$
+
+其中，$\mathbf{w}$是n维向量，代表神经网络的权重或其他参数，$in$表示输入向量，$o$代表输出向量。
+
+均方误差$E$可表示为：
+
+$$
+E=\frac{1}{2 P} \sum_{k=1}^P\left(\mathbf{t}^{[k]}-\mathbf{o}^{[k]}\right)^T\left(\mathbf{t}^{[k]}-\mathbf{o}^{[k]}\right)  \tag{20}
+$$
+
+其中，$\mathbf{t}^{[k]}$表示期望输出结果。
+
+关于$w$的一阶导数可表示为：
+
+$$
+\frac{\partial E}{\partial \mathbf{w}}=-\frac{1}{P} \sum_{k=1}^P \frac{\partial \mathbf{F}\left(\mathbf{w}, \mathbf{i n}^{[k]}\right)}{\partial \mathbf{w}}\left(\mathbf{t}^{[k]}-\mathbf{o}^{[k]}\right) \tag{21}
+$$
+
+关于$w$的二阶导数可表示为：
+
+$$
+\begin{array}{r}
+\mathbf{H} \equiv \frac{1}{P} \sum_{k=1}^P\left[\frac{\partial \mathbf{F}\left(\mathbf{w}, \mathbf{i n}^{[k]}\right)}{\partial \mathbf{w}} \cdot \frac{\partial \mathbf{F}\left(\mathbf{w}, \mathbf{i n}^{[k]}\right)^T}{\partial \mathbf{w}}-\right. 
+\left.\frac{\partial^2 \mathbf{F}\left(\mathbf{w}, \mathbf{i n}^{[k]}\right)}{\partial \mathbf{w}^2} \cdot\left(\mathbf{t}^{[k]}-\mathbf{o}^{[k]}\right)\right]
+\end{array} \tag{22}
+$$
+
+当存在局部最小值时，$\mathbf{t}^{[k]}$接近$\mathbf{o}^{[k]}$，$\mathbf{t}^{[k]}-\mathbf{o}^{[k]}$该项可忽略，上式可表示为：
+
+$$
+\mathbf{H}=\frac{1}{P} \sum_{k=1}^P \frac{\partial \mathbf{F}\left(\mathbf{w}, \mathbf{i n}^{[k]}\right)}{\partial \mathbf{w}} \cdot \frac{\partial \mathbf{F}\left(\mathbf{w}, \mathbf{i n}^{[k]}\right)^T}{\partial \mathbf{w}} \tag{23}
+$$
+
+Case1：如果网络只有一个输出，n维的向量$\mathbf{X}^{[k]}$定义为：
+$$
+\mathbf{X}^{[k]} \equiv \frac{\partial \mathbf{F}\left(\mathbf{w}, \mathbf{i n}^{[k]}\right)}{\partial \mathbf{w}} \tag{23}
+$$
+
+所以式22可表示为：
+$$
+\mathbf{H}=\frac{1}{P} \sum_{k=1}^P \mathbf{X}^{[k]} \cdot \mathbf{X}^{[k] T} \tag{24}
+$$
+
+Case2：如果网络只有多个输出，$n * n_0$的向量$\mathbf{X}^{[k]}$定义为：
+
+$$
+\begin{aligned}
+\mathbf{X}^{[k]} \equiv \frac{\partial \mathbf{F}\left(\mathbf{w}, \mathbf{i n}^{[k]}\right)}{\partial \mathbf{w}} & =\frac{\partial \mathbf{F}_1\left(\mathbf{w}, \mathbf{i n}^{[k]}\right)}{\partial \mathbf{w}}, \cdots, \frac{\partial \mathbf{F}_{n_0}\left(\mathbf{w} \cdot \mathbf{i n}^{[k]}\right)}{\partial \mathbf{w}} \\
+& =\left(\mathbf{X}_1^{[k]}, \cdots, \mathbf{X}_{n_o}^{[k]}\right)
+\end{aligned} \tag{25}
+$$
+
+式22可表示为：
+$$
+\mathbf{H}=\frac{1}{P} \sum_{k=1}^P \sum_{l=1}^{n_o} \mathbf{X}_l^{[k]} \cdot \mathbf{X}_l^{[k] T} \tag{26}
+$$
+
+由式24和式26可知，H是与梯度变量$X$相关的样本协方差矩阵。
+
+由式24可得：完整的$\mathbf{H}$可由前一项推出来：
+
+$$
+\mathbf{H}_{m+1}=\mathbf{H}_m+\frac{1}{P} \mathbf{X}^{[m+1]} \cdot \mathbf{X}^{[m+1] T} \tag{27}
+$$
+
+但我们的目的是需要得到$\mathbf{H}$的逆。标准的求逆公式可表示如下：
+
+$$
+\begin{aligned}
+& (\mathbf{A}+\mathbf{B} \cdot \mathbf{C} \cdot \mathbf{D})^{-1}= \\
+& \quad \mathbf{A}^{-1}-\mathbf{A}^{-1} \cdot \mathbf{B} \cdot\left(\mathbf{C}^{-1}+\mathbf{D} \cdot \mathbf{A}^{-1} \cdot \mathbf{B}\right)^{-1} \cdot \mathbf{D} \cdot \mathbf{A}^{-1}
+\end{aligned} \tag{28}
+$$
+
+将式27带入可得：
+
+$$
+\mathbf{H}_{m+1}^{-1}=\mathbf{H}_m^{-1}-\frac{\mathbf{H}_m^{-1} \cdot \mathbf{X}^{[m+1]} \cdot \mathbf{X}^{[m+1] T} \cdot \mathbf{H}_m^{-1}}{P+\mathbf{X}^{[m+1] T} \cdot \mathbf{H}_m^{-1} \cdot \mathbf{X}^{[m+1]}} \tag{29}
+$$
+推广到多个输出，可表示为：
+$$
+\begin{array}{r}
+\mathbf{H}_{m l+1}=\mathbf{H}_{m l}+\frac{1}{P} \mathbf{X}_{l+1}^{[m]} \cdot \mathbf{X}_{l+1}^{[m] T} \\
+\mathbf{H}_{m+1 l}=\mathbf{H}_{m n_o}+\frac{1}{P} \mathbf{X}_l^{[m+1]} \cdot \mathbf{X}_l^{[m+1] T}
+\end{array} \tag{30}
+$$
+

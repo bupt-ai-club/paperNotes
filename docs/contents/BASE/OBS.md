@@ -223,4 +223,4 @@ $$
 
 ![Alt text](images/OBS.jpg)
 
-该算法的关键是理解如何推导出逆Hessian矩阵$H^{-1}$和$\delta W$,提出了一种通过样本协方差矩阵来简化计算的方法，并展示了如何通过递归公式计算逆Hessian。可以通过具体的[例子]([contents/BASE/jupyter/OBS.ipynb](https://github.com/bupt-ai-club/paperNotes/blob/main/docs/contents/BASE/jupyter/OBS.ipynb))来加深理解。
+该算法的关键是理解如何推导出逆Hessian矩阵$H^{-1}$和$\delta W$,提出了一种通过样本协方差矩阵来简化计算的方法，并展示了如何通过递归公式计算逆Hessian。可以通过具体的[例子](https://github.com/bupt-ai-club/paperNotes/blob/main/docs/contents/BASE/jupyter/OBS.ipynb)来加深理解。

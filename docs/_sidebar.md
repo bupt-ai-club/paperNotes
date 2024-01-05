@@ -17,6 +17,7 @@
     * [Structural Pruning for Diffusion Models](contents/ModelCompression/Structural%20Pruning%20for%20Diffusion%20Models.md)
     * [LoRAShear: Efficient Large Language Model Structured Pruning and Knowledge Recovery](contents/ModelCompression/LoRAShear.md)
     * [Learning both Weights and Connections for Efficient Neural Networks](contents/ModelCompression/Learning%20both%20Weights%20and%20Connections%20for%20Efficient%20Neural%20Networks.md)
+    * [SparseGPT: Massive Language Models Can be Accurately Pruned in One-Shot](contents/ModelCompression/SparseGPT.md)
 
   * 大模型
   

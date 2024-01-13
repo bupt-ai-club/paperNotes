@@ -1,6 +1,6 @@
 # Papers
 
-## 20231225-20231231
+## 20240115-20240121
 
 - [ ] 2023-ICLR-[Trainability Preserving Neural Pruning](https://arxiv.org/abs/2207.12534) [[Code](https://github.com/MingSun-Tse/TPP)]
 

@@ -18,7 +18,7 @@
     * [LoRAShear: Efficient Large Language Model Structured Pruning and Knowledge Recovery](contents/ModelCompression/LoRAShear.md)
     * [Learning both Weights and Connections for Efficient Neural Networks](contents/ModelCompression/Learning%20both%20Weights%20and%20Connections%20for%20Efficient%20Neural%20Networks.md)
     * [SparseGPT: Massive Language Models Can be Accurately Pruned in One-Shot](contents/ModelCompression/SparseGPT.md)
-
+    * [Wanda:A Simple and Effective Pruning Approach for Large Language Models](contents/ModelCompression/Wanda.md)
   * 大模型
   
   * 近期规划
